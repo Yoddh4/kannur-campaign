@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agney Sai C. | Academic Council Election 2026</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#0A2540',
+                            lightBlue: '#1E3A8A',
+                            gold: '#FBBF24',
+                            gray: '#F3F4F6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A8A 100%);
+        }
+    </style>
+</head>
+<body class="bg-brand-gray text-gray-800 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-brand-blue text-white fixed w-full z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl tracking-wider">
+                    <span class="text-brand-gold"><i class="fa-solid fa-graduation-cap mr-2"></i>KANNUR</span> UNIVERSITY
+                </div>
+                <div class="hidden md:flex space-x-8 font-semibold">
+                    <a href="#candidate" class="hover:text-brand-gold transition">The Candidate</a>
+                    <a href="#stats" class="hover:text-brand-gold transition">The Data</a>
+                    <a href="#manifesto" class="hover:text-brand-gold transition">Manifesto</a>
+                    <a href="#join" class="bg-brand-gold text-brand-blue px-4 py-2 rounded shadow hover:bg-yellow-500 transition">Vote for Change!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-32 pb-32 px-6 text-center relative z-0">
+        <div class="max-w-5xl mx-auto">
+            <h4 class="text-brand-gold font-bold uppercase tracking-widest mb-2">Academic Council Election</h4>
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+                A Data-Driven Voice for the <span class="text-brand-gold">History Fraternity.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light">
+                Empowering Teachers &bull; Reforming FYUGP Logistics &bull; Elevating Academic Standards
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#manifesto" class="bg-brand-gold text-brand-blue font-bold py-3 px-8 rounded shadow-lg hover:bg-yellow-500 hover:-translate-y-1 transition transform duration-200">
+                    Read the Manifesto
+                </a>
+                <a href="#candidate" class="bg-transparent border-2 border-white font-bold py-3 px-8 rounded shadow-lg hover:bg-white hover:text-brand-blue transition transform duration-200">
+                    Meet the Candidate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer Section (Overlapping) -->
+    <section class="bg-brand-gray relative z-10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16">
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center">
+                <h2 class="text-lg md:text-xl font-bold text-gray-500 mb-6 uppercase tracking-widest flex items-center justify-center gap-3">
+                    <i class="fa-regular fa-clock text-brand-gold text-2xl"></i> Time Until Election
+                </h2>
+                
+                <div class="flex justify-center items-center gap-2 sm:gap-6 md:gap-8">
+                    <!-- Days -->
+                    <div class="flex flex-col items-center bg-gray-50 p-3 sm:p-5 rounded-xl shadow-inner min-w-[70px] sm:min-w-[100px] border border-gray-100">
+                        <span id="timer-days" class="text-3xl sm:text-5xl font-extrabold text-brand-blue">00</span>
+                        <span class="text-[10px] sm:text-sm text-gray-500 font-bold uppercase mt-2">Days</span>
+                    </div>
+                    <span class="text-2xl sm:text-4xl font-light text-gray-300 pb-6 sm:pb-8">:</span>
+                    
+                    <!-- Hours -->
+                    <div class="flex flex-col items-center bg-gray-50 p-3 sm:p-5 rounded-xl shadow-inner min-w-[70px] sm:min-w-[100px] border border-gray-100">
+                        <span id="timer-hours" class="text-3xl sm:text-5xl font-extrabold text-brand-blue">00</span>
+                        <span class="text-[10px] sm:text-sm text-gray-500 font-bold uppercase mt-2">Hours</span>
+                    </div>
+                    <span class="text-2xl sm:text-4xl font-light text-gray-300 pb-6 sm:pb-8">:</span>
+                    
+                    <!-- Minutes -->
+                    <div class="flex flex-col items-center bg-gray-50 p-3 sm:p-5 rounded-xl shadow-inner min-w-[70px] sm:min-w-[100px] border border-gray-100">
+                        <span id="timer-mins" class="text-3xl sm:text-5xl font-extrabold text-brand-gold">00</span>
+                        <span class="text-[10px] sm:text-sm text-gray-500 font-bold uppercase mt-2">Mins</span>
+                    </div>
+                    <span class="text-2xl sm:text-4xl font-light text-gray-300 pb-6 sm:pb-8">:</span>
+                    
+                    <!-- Seconds -->
+                    <div class="flex flex-col items-center bg-gray-50 p-3 sm:p-5 rounded-xl shadow-inner min-w-[70px] sm:min-w-[100px] border border-gray-100">
+                        <span id="timer-secs" class="text-3xl sm:text-5xl font-extrabold text-brand-gold">00</span>
+                        <span class="text-[10px] sm:text-sm text-gray-500 font-bold uppercase mt-2">Secs</span>
+                    </div>
+                </div>
+                
+                <p class="mt-8 text-gray-600 font-medium text-sm md:text-base bg-gray-50 inline-block px-6 py-2.5 rounded-full border border-gray-200 shadow-sm">
+                    <i class="fa-regular fa-calendar-check text-brand-blue mr-2"></i> Election Date: <strong class="text-brand-blue">02 July 2026, 09:30 AM</strong>
+                </p>
+                
+                <p id="timer-expired" class="hidden text-xl font-bold text-red-600 mt-6 bg-red-50 p-4 rounded-lg inline-block border border-red-100">
+                    <i class="fa-solid fa-person-booth mr-2"></i> The Election has started! Make your vote count.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Section -->
+    <section id="candidate" class="py-20 bg-brand-gray">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/3 flex justify-center">
+                <!-- Using the requested image with a fallback just in case -->
+                <img src="20250327_112103.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Agney+Sai&size=512&background=0A2540&color=FBBF24';" alt="Agney Sai C." class="rounded-xl shadow-2xl object-cover h-auto w-full max-w-sm border-4 border-brand-gold">
+            </div>
+            <div class="w-full md:w-2/3 text-center md:text-left">
+                <h2 class="text-brand-gold font-bold uppercase tracking-widest mb-2">History Candidate</h2>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-brand-blue mb-6">Agney Sai C.</h3>
+                
+                <div class="space-y-4 text-lg text-gray-800 mb-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100 inline-block text-left w-full md:w-auto min-w-[60%]">
+                    <p class="flex items-center"><i class="fa-solid fa-briefcase text-brand-blue w-8 text-center text-xl"></i> <strong>Designation:&nbsp;</strong> Assistant Professor of History</p>
+                    <p class="flex items-center"><i class="fa-solid fa-building-columns text-brand-blue w-8 text-center text-xl"></i> <strong>Institution:&nbsp;</strong> GPM Govt. College Manjeshwar, Kasaragod</p>
+                    <p class="flex items-center"><i class="fa-solid fa-award text-brand-blue w-8 text-center text-xl"></i> <strong>Credential:&nbsp;</strong> Rank 1 in Kerala PSC</p>
+                </div>
+                
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    As we navigate the rapidly changing landscape of collegiate education following the introduction of FYUGP, our roles as history teachers demand a delicate balance between intensive teaching, research, and expanding administrative burdens. My achievements so far has been rooted on the foundation that's built on the guidance my teachers and colleagues have provided. I am contesting to ensure that our representation is <strong>data-driven</strong>, <strong>accessible</strong>, and <strong>completely</strong> <strong>focused</strong> on the dignity and growth of our discipline.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section (CSS Visualizations Only) -->
+    <section id="stats" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-blue mb-4">The Ground Reality: Why We Need Change</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">An analysis of our recent undergraduate results reveals critical structural bottlenecks that severely disadvantage our History students. We must address these collectively at the Council level.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                <!-- CSS Data Visual 1: Pass Rate Stagnation -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col justify-center">
+                    <div class="mb-4">
+                        <span class="bg-blue-100 text-brand-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Data Point 1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">University Pass Rate Stagnation</h3>
+                    <p class="text-gray-600 mb-8">Across the last four to five years, the general undergraduate pass rate has stagnated around 59%, failing to reflect the true potential of our students and leaving a large segment vulnerable.</p>
+                    
+                    <div class="w-full bg-gray-200 rounded-full h-8 mb-3 shadow-inner relative overflow-hidden">
+                        <div class="bg-brand-blue h-8 rounded-full flex items-center justify-end pr-4 text-white font-bold transition-all duration-1000" style="width: 59%;">
+                            59%
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-sm font-semibold text-gray-500">
+                        <span>Students Passing (59%)</span>
+                        <span class="text-red-500">Vulnerable/Failing (41%)</span>
+                    </div>
+                </div>
+
+                <!-- CSS Data Visual 2: Grade Compression -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col justify-center items-center text-center">
+                    <div class="mb-4 w-full text-left">
+                        <span class="bg-yellow-100 text-brand-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Data Point 2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Severe Grade Compression</h3>
+                    <p class="text-gray-600 mb-6">In the latest results, out of 693 History students university-wide, <strong>only 1 student</strong> managed to secure a 90%+ aggregate.</p>
+                    
+                    <div class="flex items-center justify-center space-x-6 mb-8 bg-gray-50 py-6 px-10 rounded-xl border border-gray-200 w-full">
+                        <div class="flex flex-col items-center">
+                            <span class="text-5xl font-extrabold text-brand-gold mb-1">1</span>
+                            <span class="text-xs text-gray-500 font-bold uppercase">Scored 90%+</span>
+                        </div>
+                        <div class="text-4xl text-gray-300 font-light">/</div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-5xl font-extrabold text-brand-blue mb-1">693</span>
+                            <span class="text-xs text-gray-500 font-bold uppercase">Total Students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-50 text-red-700 px-4 py-3 rounded-lg text-sm font-semibold border border-red-200 w-full flex items-start text-left">
+                        <i class="fa-solid fa-triangle-exclamation mt-1 mr-3 text-red-500"></i>
+                        <span>This heavy compression into B and C grades severely disadvantages our graduates when seeking B.Ed. and PG admissions against other disciplines.</span>
+                    </div>
+                </div>
+
+                <!-- NEW CSS Data Visual 3: PG Center Deficit -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col justify-center">
+                    <div class="mb-4">
+                        <span class="bg-blue-100 text-brand-blue text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Data Point 3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Stagnant PG Upgradation</h3>
+                    <p class="text-gray-600 mb-6">While our undergraduate intake steadily rises toward nearly 700 seats, our institutional framework remains stagnant. Out of 15 UG History departments, only a minimal fraction are upgraded to PG centers.</p>
+                    
+                    <div class="grid grid-cols-5 gap-3 mb-4">
+                        <!-- 4 Gold (PG), 11 Blue (UG only) blocks representing the 15 departments -->
+                        <div class="h-12 rounded bg-brand-gold flex items-center justify-center text-brand-blue font-extrabold text-sm shadow-md">PG</div>
+                        <div class="h-12 rounded bg-brand-gold flex items-center justify-center text-brand-blue font-extrabold text-sm shadow-md">PG</div>
+                        <div class="h-12 rounded bg-brand-gold flex items-center justify-center text-brand-blue font-extrabold text-sm shadow-md">PG</div>
+                        <div class="h-12 rounded bg-brand-gold flex items-center justify-center text-brand-blue font-extrabold text-sm shadow-md">PG</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                        <div class="h-12 rounded bg-blue-50 border-2 border-blue-200 flex items-center justify-center text-brand-blue font-bold text-xs opacity-75">UG Only</div>
+                    </div>
+                </div>
+
+                <!-- NEW CSS Data Visual 4: Disparity & Vulnerable Colleges -->
+                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 flex flex-col justify-center">
+                    <div class="mb-4">
+                        <span class="bg-yellow-100 text-brand-gold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Data Point 4</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Inter-College Disparity</h3>
+                    <p class="text-gray-600 mb-6">While top-tier colleges manage robust results, vulnerable departments suffer sharp performance drops—highlighting the urgent need for structured academic handholding and balanced question banks.</p>
+                    
+                    <div class="space-y-6 w-full">
+                        <div>
+                            <div class="flex justify-between text-sm font-bold text-brand-blue mb-2">
+                                <span>Top Performing Departments</span>
+                                <span>~85% Pass Rate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-5 shadow-inner">
+                                <div class="bg-brand-gold h-5 rounded-full" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-bold text-red-600 mb-2">
+                                <span>Vulnerable Departments</span>
+                                <span>Drops to 35%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-5 shadow-inner">
+                                <div class="bg-red-500 h-5 rounded-full relative" style="width: 35%;">
+                                    <div class="absolute -right-2 -top-1 w-2 h-7 bg-red-700"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Manifesto Roadmap Section -->
+    <section id="manifesto" class="py-20 bg-brand-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-brand-blue mb-4">The Manifesto: Action Over Assurances</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">I am committed to actively advocating for immediate administrative relief regarding our pressing logistical hurdles and protecting the academic standards of our discipline.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-brand-blue">
+                    <div class="w-14 h-14 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">1. Fixing FYUGP & Internships</h3>
+                    <p class="text-gray-600 mb-4">The transition to the Four-Year Undergraduate Programme (FYUGP) has brought immense workload confusion and erratic course layouts.</p>
+                    <p class="text-gray-600"><strong>The Plan:</strong> Demand a streamlined, predictable academic calendar. For the mandatory 2-credit internships, I will advocate for a centralized directory of host institutions and an evaluation mechanism that does not exploit our valuable time.</p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-brand-gold">
+                    <div class="w-14 h-14 bg-yellow-100 text-brand-gold rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">2. Reforming the K-REAP Portal</h3>
+                    <p class="text-gray-600 mb-4">Continuous technical glitches, complex data-entry, and non-intuitive workflows have literally transformed our teaching hours into clerical desk jobs.</p>
+                    <p class="text-gray-600"><strong>The Plan:</strong> Force the university to interface with MKCL/developers to simplify the portal and remove redundant entries. If unresolved, push to replace it with successful in-house models like the Digital University of Kerala portal.</p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-brand-blue">
+                    <div class="w-14 h-14 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">3. Upgrading to PG Centers</h3>
+                    <p class="text-gray-600 mb-4">While our UG student intake is rising toward 700 seats, very few of our 15 departments have been upgraded to postgraduate centers.</p>
+                    <p class="text-gray-600"><strong>The Plan:</strong> Strongly advocate for sanctioning new MA History streams in colleges demonstrating consistent UG stability. This will create vital avenues for PG teaching, dissertation guidance, and faculty research growth.</p>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-brand-gold">
+                    <div class="w-14 h-14 bg-yellow-100 text-brand-gold rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">4. Addressing Grade Compression</h3>
+                    <p class="text-gray-600 mb-4">With extreme compression into B and C grades, our graduates face intense competition securing B.Ed. admissions compared to subjects like Economics.</p>
+                    <p class="text-gray-600"><strong>The Plan:</strong> Protect our academic standards while pushing for centralized resource-pooling and standardized question banks to uplift vulnerable departments dropping to 35% pass rates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="join" class="bg-brand-blue text-white py-16 text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">An accessible, transparent, and teacher-centric representation.</h2>
+            <p class="text-lg text-blue-200 mb-8">Beyond organizational affiliations, I promise an independent representation focused entirely on the dignity and growth of our discipline. I humbly request your valuable support, vote, and blessings in the upcoming secret ballot.</p>
+            <button class="bg-brand-gold text-brand-blue font-bold py-4 px-10 rounded-full shadow-lg text-xl hover:bg-yellow-500 hover:scale-105 transition transform duration-200">
+                <i class="fa-solid fa-check-to-slot mr-2"></i> Vote for Agney Sai C.
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#051525] text-gray-400 py-8 text-center text-sm">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="mailto:agney.sai@gpmgcm.ac.in" class="hover:text-white transition"><i class="fa-solid fa-envelope fa-2x"></i></a>
+            <a href="tel:+919645969663" class="hover:text-white transition"><i class="fa-solid fa-phone fa-2x"></i></a>
+        </div>
+        <p>&copy; 2026 Academic Council Election Campaign | History Candidate</p>
+    </footer>
+
+    <!-- Countdown Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the target date: 02 July 2026 09:30:00
+            const countDownDate = new Date("July 2, 2026 09:30:00").getTime();
+
+            // Format numbers to always have 2 digits
+            const padNumber = (num) => String(num).padStart(2, '0');
+
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                // Time calculations
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the DOM
+                if (distance > 0) {
+                    document.getElementById("timer-days").innerText = padNumber(days);
+                    document.getElementById("timer-hours").innerText = padNumber(hours);
+                    document.getElementById("timer-mins").innerText = padNumber(minutes);
+                    document.getElementById("timer-secs").innerText = padNumber(seconds);
+                } else {
+                    // Stop the timer if the date has passed
+                    clearInterval(countdownInterval);
+                    document.getElementById("timer-days").innerText = "00";
+                    document.getElementById("timer-hours").innerText = "00";
+                    document.getElementById("timer-mins").innerText = "00";
+                    document.getElementById("timer-secs").innerText = "00";
+                    document.getElementById("timer-expired").classList.remove("hidden");
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
